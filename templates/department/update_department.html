@@ -1,0 +1,20 @@
+{% extends 'inicio/index.html' %}
+
+{% block title %}
+<title>Actualizar Departamento</title>
+{% endblock title%}
+
+{% block body_block %}
+    <div class="grid-container">
+        <h1 class="cell">Actualizar Datos de Departamento</h1>
+        
+        <div class="cell">
+            <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="button success">Actualizar</button>
+                <a class="button primary" href="{% url 'url-departamentos'  %}">Cancelar</a>
+            </form>
+        </div>
+    </div>
+{% endblock body_block %}
+

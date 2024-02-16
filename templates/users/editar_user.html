@@ -1,0 +1,22 @@
+
+{% extends 'inicio/index.html' %}
+
+{% block head_block %}
+<title>Editar Usuario</title>
+{% endblock head_block %}
+
+{% block body_block %}
+    <div class="grid-container">
+        <h1 class="cell">Actualizar Datos</h1>
+        
+        <div class="cell">
+            <form method="POST">{% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="button success">
+                    Actualizar
+                </button>
+            </form>
+        </div>
+    </div>
+{% endblock body_block %}
+    

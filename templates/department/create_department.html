@@ -1,0 +1,25 @@
+{% extends 'inicio/index.html' %}
+
+{% block title %}
+<title>Alta de Departamentos</title>
+{% endblock title%}
+
+{% block body_block %}
+    <div class="grid-container">
+        <h1 class="cell">Crear Departamentos</h1>
+
+        {% if error %} 
+            <h3 class="cell">{{error}}</h3>
+        {% endif %} 
+
+        <div class="cell">
+            <form action={% url 'url-crear-departamentos' %} method="POST">
+                {% csrf_token %}
+                {{formulario.as_table}}
+                <input type="submit" class="button success" value="Crear"/>
+                <a class="button primary" href="{% url 'url-inicio'  %}">Cancelar</a>
+            </form>
+        </div>
+    </div>
+{% endblock body_block %}
+
